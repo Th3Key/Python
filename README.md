@@ -11,6 +11,7 @@ _The simplicity is one of the main reasons Python is loved by beginners, but beh
 - _*Robotics*_
 
 _Python operates as an *interpreted language*, eliminating the need for compilation before execution._
+
 _Furthermore it is *dinamically typed*, meaning that variable types do not require explicit declaration._
 
-_
+_Another distinctive is **indentation**
