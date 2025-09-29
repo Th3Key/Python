@@ -24,3 +24,5 @@ _The language does not confine developers to a single paradigm. **Procedural pro
 _A significant advantage of Python lies in its comprehensive **standard library**. Modules for mathematics, file manipulation, networking, and system interaction are included with every installation. Beyond this foundation, the **Python Package index** provides access to thousands of external libraries, extending the language into specialized fields._
 
 _Python is also **platform-independent**, working consistently across Windows, macOS, and Linux environments. This portability simplifies deployment and collaboration, ensuring that code developed in one context can easily be executed in another. The **open-source** nature of the language has cultivated an exceptionally large and active community, which contributes documentation, tutorials, and improvements to the ecosystem._
+
+## _Variables and Data Types_
