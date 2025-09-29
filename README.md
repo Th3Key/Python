@@ -14,9 +14,7 @@ _The simplicity is one of the main reasons Python is loved by beginners, but beh
 
 _Python is a **high-level**, **interpreted language**, designed to prioritize readability and clarity. Programs written in Python do not require compilation before execution; instead, they are run directly by the interpreter. This characteristic enables rapid testing and development._
 
-
 _The syntax of Python distinguishes it from many other languages. **Indentation** is used to define the structure of code, replacing the braces or keywords that are common elsewhere. The result is source code that is clean, uniform, and immediately comprehensible._
-
 _Another defining aspect of Python is its **dynamic typing system**. Variables do not need to be declared with explicit types; the type is inferred automatically at runtime. At the same time, Python maintains strong rules for type behavior, ensuring that values behave predictably even in the absence of explicit declarations._
 
 _The language does not confine developers to a single paradigm. **Procedural programming**, **Object-Oriented design**, and **Functional constructs** can coexist within the same project. This versatility allows Python to adapt to a wide variety of domains, from small scripts that automate routine tasks to large systems that require complex architectures._
