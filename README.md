@@ -33,7 +33,7 @@ _A variable in Python is a symbolic name that stores data in memory. Variables a
 _```name = "Chris"```_\
 _```age = 25```_
 
-_<sub>**name** stores a string<sub>_
+_<sub>**name** stores a string<sub>_\
 _<sub>**age** stores an integer<sub>_
 
 _In Python, every value and variable belongs to a **data type**, which determines how the data is stored, how it can be manipulated, and what operations can be performed on it. Python orgranizes data types into two broad categories: **built-in types** and **user-defined types**._
