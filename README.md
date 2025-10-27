@@ -247,7 +247,7 @@ _Common specifiers :_
   _```age = 25```_\
   _```height = 1.753```_
 
-  _```print(f"{'Name':<10} | {'Age':^5} | {'Height':>7}")```_\
+  _```print(f"{'Name':<10} | {'Age':^5} | {'Height':>7}")```_
 
     _<sub>Print header with aligned columns<sub>_
   
