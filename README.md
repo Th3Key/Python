@@ -35,7 +35,10 @@ _It is also **case-sensitive**, meaning that identifiers with different letter c
 _In Python, comments allow programmers to include explanatory notes that are ignored during execution. We can insert two types of comments into the code :_
 
 * _```single-line comment``` : begins with the characters ```#```_
-* _```multi-line comment``` : starts and ends with the sequence ```"""``` or ```'''``` 
+* _```multi-line comment``` : starts and ends with the sequence ```"""``` or ```'''```_
+
+_Python allows a single statement to span multiple lines for readability. This can be done using a **backslash** (```\```) at the end of a line, indicating that the statement continues on the next line._
+_Alternatively, enclosing expressions in **parentheses** allows Python to automatically treat multiple lines as a single statement without a backslash._
 
 ## _Variables and Data Types_
 
@@ -46,6 +49,8 @@ _```age = 25```_
 
 _<sub>**name** stores a string<sub>_\
 _<sub>**age** stores an integer<sub>_
+
+_Python does not have true constants; however, by convention, variables intended to remain unchanged are written in uppercase letters, signaling to programmers that they should not be modified._
 
 _In Python, every value and variable belongs to a **data type**, which determines how the data is stored, how it can be manipulated, and what operations can be performed on it. Python orgranizes data types into two broad categories: **built-in types** and **user-defined types**._
 
@@ -133,12 +138,20 @@ _When operators are combined with values, the result is an **expression**. Expre
 _Arithmetic operators perform basic mathematical operations. They apply to numeric types such as integers, floats, and even complex numbers._
 
 * _**Addition**: ```+```_
+
+  _<sub>The arithmetic operator ```+``` can also be applied to strings, allowing **concatenation**, combining two strings into a single new string.<sub>_
+  
 * _**Subtraction**: ```-```_
 * _**Multiplication**: ```*```_
+
+  _<sub>The arithmetic operator ```*``` can also be applied to strings, allowing **repetition**, creating multiple copies of a string in sequence.<sub>_
+
 * _**Division**: ```/``` (always returns a float, even when dividing integers)_
 * _**Floor Division**: ```//``` (returns the integer quotient, discarding the remainder)_
 * _**Modulo**: ```%``` (returns the remainder of a division)_
 * _**Exponentiation**: ```**``` (raises a number to the power of another)_
+
+_<sub>Python allows arithmetic operations to be written in a more compact form using **augmented assignment operators**. For example instead of writing ```a = a + 1```, the same effect can be achieved with ```a += 1```.<sub>_
 
 ### _Comparison Operators_
 
@@ -207,8 +220,123 @@ _Two primary forms of conversion exist: **implicit conversion** and **explicit c
 
 
 
+## _Escape Sequences and Output Formatting_
 
+_In Python, strings can contain special characters that cannot be typed or displayed directly._
+_These characters are represented using **escape sequences**, which begin with a backslash (```\```). Escape sequences allow programmers to include formatting commands, quotation marks, or special symbol within strings, making text more expressive and structured._
+_Common escape sequences include :_
 
+* _```\n``` : inserts a **newline**, moving the cursor to the next line._
+* _```\t``` : inserts a **horizontal tab**, useful for aligning text._
+* _```\\``` : inserts a literal backslash._
+* _```\'``` and ```\*``` : include single or double quotes inside a string without ending it._
 
+_In Python, formatting output is essential when displaying data in a clear and structured way._
+_While simple concatenation or printing can work for short messages, more complex programs often require **aligned columns**, **fixed widths**, or **controlled decimal precision**. Python provides several methods to achieve this :_
 
+#### _F-strings_
 
+_F-strings are string literals prefixed with ```f``` or ```F```, in which expressions inside ```{}``` are evaluated and inserted directly into the string. Format specifiers can follow a colon (```:```) inside the braces._
+_Common specifiers :_
+
+* _**Alignment** : ```<``` left align, ```^``` center align, ```>``` right-align._
+* _**Width** : a number specifying the minimum width of the field._
+* _**Precision** : for floats, ```.nf``` sets ```n``` decimal places._
+
+  _```name = "Chris"```_\
+  _```age = 25```_\
+  _```height = 1.753```_
+
+  _```print(f"{'Name':<10} | {'Age':^5} | {'Height':>7}")```_\
+
+    _<sub>Print header with aligned columns<sub>_
+  
+  _```print(f"{name:<10} | {age:^5} | {height:>7.2f}")```_
+
+    _<sub>Print data row with formatting<sub>_
+
+#### _format() Method_
+
+_The ```format()``` method works similarly but separates the string template from the values. Placeholders ```{}``` in the string are replaced by arguments passed to ```format()```._
+
+  _```print("{:<10} | {:^5} | {:>7.2f}".format(name, age, height))```_
+
+#### _Old-Style % Operator_
+
+_This older style uses **format codes** that indicate type and optional width/precision :_
+
+* _```%s``` : **string**_
+* _```%d``` : **integer**_
+* _```%f``` : **floating-point number**_
+
+_Width and precision are added after ```%``` :_
+
+_```print("%-10s | %5d | %7.2f" % (name, age, height))```_
+
+## _Basic String Methods_
+
+_Strings in Python are objects just like everything else. They come with a variety of **built-in methods** that simplify common operations. These methods allow programmers to manipulate, format, and inspect strings efficiently, without having to write complex code from scratch._
+_Among the most frequently used string methods are :_
+
+* _```.upper()``` : convert all characters in a string to uppercase._
+* _```.lower()``` : convert all characters in a string to lowercase._
+* _```.strip()``` : removes any leading and trailing whitespace (or specified characters) from a string._
+
+  _```text = "  Hello World    "```\
+  _```print(text.strip())``` result = "Hello World"_
+
+* _```.replace(old, new)``` : returns a new string where occurrences of **old** are replaced with **new**_
+
+  _```text = "I like apples"```_\
+  _```print(text.replace("apples", "oranges"))``` result = "I like oranges"_
+
+* _```.split(separator)``` : splits a string into a list of substrings based on the specified separator (default is any whitespace)._
+
+  _```text = "Python is fun"```_\
+  _```words = text.split()```_\
+  _```print(words)``` result = ["Python", "is", "fun"]_
+
+* _```.join(iterable)``` : concatenates elements from an iterable (like a list of strings) into a single string, with the original string acting as a separator._
+
+  _```words = ["Python", "is", "fun"]```_\
+  _```sentence = " ".join(words)```_\
+  _```print(sentence)``` result = "Python is fun"_
+
+* _```.find(substring)``` : returns the index of the first occurrence of **substring** in the string or **-1** if not found._
+* _```.startswith(prefix)``` : check whether the string begins with the specified substring, returning **True** or **False**._
+* _```.endswith(suffix)``` : check whether the string ends with the specified substring, returning **True** or **False**._
+
+## Built-in Functions
+
+_Python provides a large collection of **built-in functions** that are always available without importing additional modules. These functions perform common operations on data, allowin programmers to write concise and readable code without reinventing basic functionality. Built-in functions work across data types, depending on the operation, and often simplify complex tasks into single function calls._
+
+_The most frequently used functions are :_
+
+* _```abs()``` : returns the absolute value of a number, effectively removing any negative sign._
+
+  _```print(abs(-7))``` result = 7_
+  
+* _```round()``` : rounds a floating-point number to the nearest integer, or to a specified number of decimal places._
+
+  _```print(round(3.14159, 2))``` result = 3.14_
+
+* _```len()``` : returns the number of items in a sequence, such as a string, list or tuple._
+* _```type()``` : returns the type of a value or variable, providing insight into how Python classifies the data._
+* _```max()``` : returns the largest value from a sequence or a set of arguments._
+
+  _```numbers = [4,7,1,9]```_\
+  _```print(max(numbers))``` result = 9_
+
+* _```min()``` : returns the smallest value from a sequence or a set of arguments._
+
+  _```numbers = [4, 7, 1, 9]```_\
+  _```print(min(numbers))``` result = 1_
+
+* _```sum()``` : calculates the total of all numeric elements in a sequence._
+* _```sorted()``` : returns a new list containing all items from a sequence in ascending order (or descending if specified)._
+
+  _```numbers = [4, 2, 9, 1]```_\
+  _```print(sorted(numbers))``` result = [1, 2, 4, 9]_\
+  _```print(sorted(numbers, reverse = True))``` result = [9, 4, 2, 1]_
+
+* _```input()``` : allows the program to receive input from the user as a string._
