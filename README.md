@@ -282,7 +282,7 @@ _Among the most frequently used string methods are :_
 * _```.lower()``` : convert all characters in a string to lowercase._
 * _```.strip()``` : removes any leading and trailing whitespace (or specified characters) from a string._
 
-  _```text = "  Hello World    "```\
+  _```text = "  Hello World    "```_\
   _```print(text.strip())``` result = "Hello World"_
 
 * _```.replace(old, new)``` : returns a new string where occurrences of **old** are replaced with **new**_
