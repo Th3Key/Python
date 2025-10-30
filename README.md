@@ -395,8 +395,8 @@ _For example, the output of a program can be sent to a file instead of the scree
 
 _In most cases, redirection is handled at the **operating system level**, using commands in the terminal or shell._
 
-_```python program.py > output.txt``` redirects standard output to a file (if the file **does not exist**, it will be **automatically created**, if the file **already exists**, it will be **overwritten**)_
-_```python program.py < input.txt``` redirects standard input from a file (the file must already exist because the program expects to read data from it, if the file is missing, an error will occur)_
+_```python program.py > output.txt``` redirects standard output to a file (if the file **does not exist**, it will be **automatically created**, if the file **already exists**, it will be **overwritten**)_\
+_```python program.py < input.txt``` redirects standard input from a file (the file must already exist because the program expects to read data from it, if the file is missing, an error will occur)_\
 _```python program.py >> output.txt``` appends output to an existing file (if the file **does not exist**, it will be **automatically created**, if the file **already exists**, the new output will be **added** to the end of the existing content)_
 
 _Whithin Python itself, similar behavior can be achieved programmatically by opening files and reassigning the standard streams._
