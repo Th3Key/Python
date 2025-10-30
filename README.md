@@ -509,8 +509,42 @@ _The flexibility of the ```for``` loop makes it a powerful tool for iterating ov
 #### _Loop Control Statements_
 
 _Loops are powerful, but sometimes it's necessary to alter their normal flow. Python provides a set of **loop control statements** that allow you to modify how and when a loop executes._
+
 _These statements are particularly useful for handling exceptions, skipping certain iterations, or stopping the loop when a condition is met._
 
+* _break : The ```break``` statement is used to **terminate a loop prematurely**. When Python encounters a ```break```, the loop immediately stops executing, and the control flow continues with the first statement that follows the loop._
+
+  _```for i in range(10):```_\
+  _```  if i == 5:```_\
+  _```    break```_\
+  _```  print(i)```_
+
+  _<sub>The loop stops when ```i``` equals 5, even though the range goes up to 9.<sub>_
+
+* _continue : The ```continue``` statement causes the loop to **skip the current iteration** and move directly to the next one. This is useful when certain conditions should cause the loop to ignore part of its code without breaking completely._
+
+  _```for i in range(6):```_\
+  _```  if i == 3:```_\
+  _```    continue```_\
+  _```  print(i)```_
+
+  _<sub>When ```i``` equals 3, the ```continue``` statement skips that iteration, so 3 is not printed.<sub>_
+
+* _pass : The ```pass``` statement does nothing when executed, it's simply a placeholder. It is often used when a statement is syntactically required but no action needs to be taken yet (for example, when defining an empty loop or function that will be implemented later)._
+
+  _```for i in range(3): ```_\
+  _```  pass```_
+
+  _<sub>This loop doews nothing but remains syntactically valid.<sub>_
+
+* _else : In Python, loops can also include an optional **else** block that executes **only if the loop completes normally**, without encountering a ```break``` statement. This is a unique feature of Python and can make the code more expressive._
+
+  _```for i in range(5):```_\
+  _```  print(i)```_\
+  _```else:```_\
+  _```  print("Loop finished without break.")```_
+
+  _<sub>But if a ```break``` is triggered, the ```else``` block will be skipped.<sub>_
 
 
 
