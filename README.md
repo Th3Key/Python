@@ -133,7 +133,7 @@ _<sub>The example shows a simple user-defined type using a class. This creates a
 _An operator in Python is a symbol or keyword that performs a specific action on one or more values (known as **operands**)._\
 _When operators are combined with values, the result is an **expression**. Expressions are the core of computation in Python (every calculation, comparison, or logical decision rests on them)._
 
-### _Arithmetic Operators_
+#### _Arithmetic Operators_
 
 _Arithmetic operators perform basic mathematical operations. They apply to numeric types such as integers, floats, and even complex numbers._
 
@@ -153,7 +153,7 @@ _Arithmetic operators perform basic mathematical operations. They apply to numer
 
 _<sub>Python allows arithmetic operations to be written in a more compact form using **augmented assignment operators**. For example instead of writing ```a = a + 1```, the same effect can be achieved with ```a += 1```.<sub>_
 
-### _Comparison Operators_
+#### _Comparison Operators_
 
 _Comparison operators evaluate the relationship betweeen values and return Boolean results. They are crucial for decision-making in programs._
 
@@ -164,7 +164,7 @@ _Comparison operators evaluate the relationship betweeen values and return Boole
 * _**Greater than or Equal to**: ```>=```_
 * _**Less than or Equal to**: ```<=```_
 
-### _Logical Operators_
+#### _Logical Operators_
 
 _Logical operators combine Boolean values to form more complex conditions._
 
@@ -172,13 +172,13 @@ _Logical operators combine Boolean values to form more complex conditions._
 * _```or```: returns True if at least one operand is True._
 * _```not```: negates the truth value._
 
-### _Assignment Operators_
+#### _Assignment Operators_
 
 _The assignment operator ```=``` places a value into a variable. In addition, Python supports **augmented assignment**, which combines an operation with assignment, simplifying expressions._
 
 _<sub>```x += 5``` is equivalent to ```x = x + 5```<sub>_
 
-### _Membership Operators_
+#### _Membership Operators_
 
 _Membership operators test whether a value is present in a sequence such as a list, string, or tuple._
 
@@ -189,7 +189,7 @@ _Membership operators test whether a value is present in a sequence such as a li
 ```print("apple" in fruits)```  --> True\
 ```print("grape" not in fruits``` --> True
 
-### _Identity Operators_
+#### _Identity Operators_
 
 _Identity operators check whether two variables refer to the same object in memory, not just whether they contain the same value._
 
@@ -203,7 +203,7 @@ _Identity operators check whether two variables refer to the same object in memo
 ```print(a is b)``` --> True (same object)\
 ```print(a is c)``` --> False (different objects, same content)
 
-### _Operator Precedence_
+#### _Operator Precedence_
 
 _When multiple operators appear in an expression, Python follows a strict order of evaluation known as operator precedence. For instance, multiplication and division are performed before addition and subtraction, just like in standard arithmetic._\
 _Parentheses can always be used to override precedence and make intentions explicit._
@@ -295,6 +295,54 @@ _Width and precision are added after ```%``` :_
 
 _```print("%-10s | %5d | %7.2f" % (name, age, height))```_
 
+## Built-in Functions
+
+_Python provides a large collection of **built-in functions** that are always available without importing additional modules. These functions perform common operations on data, allowin programmers to write concise and readable code without reinventing basic functionality. Built-in functions work across data types, depending on the operation, and often simplify complex tasks into single function calls._
+
+_The most frequently used functions are :_
+
+* _```print()``` : outputs information to the standard console, allowing programmers to display messages, variable values, or results of operations._
+
+  _```print("Hello World!")```_
+
+  _The function can take multiple arguments, separated by commas, and automatically inserts a space between them._
+
+  _```print("Hello", "World")```_
+
+  _By default it ends with a newline character (```\n```), but this behavior can be customized using the ```end``` parameter._
+
+  _```print("Hello", "World", end = "!")``` outputs : Hello World!_
+
+  _<sub>By default it is ```end = "\n"```.<sub>_
+
+* _```input()``` : allows the program to receive input from the user as a string._
+* _```len()``` : returns the number of items in a sequence, such as a string, list or tuple._
+* _```type()``` : returns the type of a value or variable, providing insight into how Python classifies the data._
+* _```sum()``` : calculates the total of all numeric elements in a sequence._
+* _```abs()``` : returns the absolute value of a number, effectively removing any negative sign._
+
+  _```print(abs(-7))``` result = 7_
+  
+* _```round()``` : rounds a floating-point number to the nearest integer, or to a specified number of decimal places._
+
+  _```print(round(3.14159, 2))``` result = 3.14_
+
+* _```max()``` : returns the largest value from a sequence or a set of arguments._
+
+  _```numbers = [4,7,1,9]```_\
+  _```print(max(numbers))``` result = 9_
+
+* _```min()``` : returns the smallest value from a sequence or a set of arguments._
+
+  _```numbers = [4, 7, 1, 9]```_\
+  _```print(min(numbers))``` result = 1_
+
+* _```sorted()``` : returns a new list containing all items from a sequence in ascending order (or descending if specified)._
+
+  _```numbers = [4, 2, 9, 1]```_\
+  _```print(sorted(numbers))``` result = [1, 2, 4, 9]_\
+  _```print(sorted(numbers, reverse = True))``` result = [9, 4, 2, 1]_
+
 ## _Basic String Methods_
 
 _Strings in Python are objects just like everything else. They come with a variety of **built-in methods** that simplify common operations. These methods allow programmers to manipulate, format, and inspect strings efficiently, without having to write complex code from scratch._
@@ -338,40 +386,12 @@ _Among the most frequently used string methods are :_
 * _```.startswith(prefix)``` : check whether the string begins with the specified substring, returning **True** or **False**._
 * _```.endswith(suffix)``` : check whether the string ends with the specified substring, returning **True** or **False**._
 
-## Built-in Functions
+## _Input and Output Redirection_
 
-_Python provides a large collection of **built-in functions** that are always available without importing additional modules. These functions perform common operations on data, allowin programmers to write concise and readable code without reinventing basic functionality. Built-in functions work across data types, depending on the operation, and often simplify complex tasks into single function calls._
+_In Python, standard input and output are normally connected to the keyboard and the screen. When a program calls ```input()```, data is read from the keyboard, and when ```print()``` is used, the result is displayed on the screen._
+_However, in many situations, it is useful to **redirect** these streams, meaning that the source of destination of input and output can be changed. This process is known as **input/output redirection**._
 
-_The most frequently used functions are :_
-
-* _```abs()``` : returns the absolute value of a number, effectively removing any negative sign._
-
-  _```print(abs(-7))``` result = 7_
-  
-* _```round()``` : rounds a floating-point number to the nearest integer, or to a specified number of decimal places._
-
-  _```print(round(3.14159, 2))``` result = 3.14_
-
-* _```len()``` : returns the number of items in a sequence, such as a string, list or tuple._
-* _```type()``` : returns the type of a value or variable, providing insight into how Python classifies the data._
-* _```max()``` : returns the largest value from a sequence or a set of arguments._
-
-  _```numbers = [4,7,1,9]```_\
-  _```print(max(numbers))``` result = 9_
-
-* _```min()``` : returns the smallest value from a sequence or a set of arguments._
-
-  _```numbers = [4, 7, 1, 9]```_\
-  _```print(min(numbers))``` result = 1_
-
-* _```sum()``` : calculates the total of all numeric elements in a sequence._
-* _```sorted()``` : returns a new list containing all items from a sequence in ascending order (or descending if specified)._
-
-  _```numbers = [4, 2, 9, 1]```_\
-  _```print(sorted(numbers))``` result = [1, 2, 4, 9]_\
-  _```print(sorted(numbers, reverse = True))``` result = [9, 4, 2, 1]_
-
-* _```input()``` : allows the program to receive input from the user as a string._
+_For example, the output of a program can be sent to a file instead of the screen, or input can be taken from a file rather than typed manually. This allows automation, data logging, or interaction with other programs._
 
 ## _Control Flow : Conditionals_
 
@@ -428,6 +448,62 @@ _```if x > 0 : print("Positive")```_
 
 _Although this syntax is valid, it should be used sparingly. Readability remains a core principle in Python's philosophy, and multi-line statements are usually clearer for more complex logic._
 
-## _Loops_
+## _Control Flow : Loops_
+
+_While conditionals allow decisions to be made once, **loops** enable a program to repeat a sequence of instructions multiple times. This repetition can continue for a specific number of iterations or until a particular condition is no longer true._
+_In Python, loops are central to automation, iteration, and data processing. They eliminate redundancy by allowing tasks to be executed repeatedly with minimal code._
+
+#### _While Loop_
+
+_The ```while``` loop is used when the number of iterations is **not know in advance**. Execution cntinues as long as a specified condition remains true, making this structure suitable for situations where repetition depends on events or variable states that may change unpredictably during runtime._
+_In essence, the ```while``` loop is ```event-driven```, reacting to conditions rather than following a fixed count._
+
+_```count = 0```_
+
+_```while count < 5 :```_
+_```  print("count is: ", count)```_
+_```  count += 1```_
+
+_<sub>The variable ```count``` is incremented during each iteration. When it reaches 5, the condition ```count < 5``` becomes false, and the loop stops.<sub>_
+
+_The ```while``` loop is ideal when the number of iterations is not predetermined but depends on a logical condition, such as waiting for user input or processing until a specific event occurs._
+
+_If a ```while``` condition never becomes false, the loop continues indefinitely, this is known as an **infinite loop**. To prevent this, make sure the condition will eventually change or include a mechanism like the ```break``` statement to exit manually._
+
+#### _For Loop_
+
+_The ```for``` loop is typically used when the number of iterations is **known or predetermined**. It iterates over a sequence (such as list, string or range of numbers) executing the block of code once for each element._
+_For this reason, the ```for``` loop is often described as **index-driven**, as its execution is guided by the progression through a defined iterable rather than by an open-ended condition._
+
+_```fruits = ["apple", "banana", "cherry"]```_
+
+_```for fruit in fruits :```_
+_```  print(fruit)```_
+
+_<sub>The loop variable ```fruit``` takes on each element of the list sequentially. Once all elements have been processed, the loop terminates automatically.<sub>_
+
+_The ```for``` loop can also be used with the ```range()``` function to repeat an action a specific number of times._
+
+_```for i in range(5) :```_
+_```  print("Iteration: ", i)```_
+
+_The ```range()``` function generates a sequence of integers starting from 0 (by default) and stopping before the specified number. It can also take optional ```start``` and ```step``` arguments._
+
+_```for i in range(1, 10, 2):```_
+_```  print(i)```_
+
+_<sub>This example prints all odd numbers between 1 and 9 (the third parameter determines the increment, or decrement, if negative).<sub>_
+
+_The flexibility of the ```for``` loop makes it a powerful tool for iterating over any kind of sequence or collection._
+
+
+
+
+
+
+
+
+
+
 
 
